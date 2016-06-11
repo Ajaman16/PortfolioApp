@@ -9,14 +9,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button firstApp, secondApp, thirdApp, fourthApp, fifthApp, capstonApp;
-    // Initialising strings for Toast message
-    private String content = "This button will launch my ";
-    private String app1 = content + "Popular Movies App.";
-    private String app2 = content + "Stock Hawk App.";
-    private String app3 = content + "Build It Bigger App.";
-    private String app4 = content + "Make Your App Material App.";
-    private String app5 = content + "Go Ubiquitous App.";
-    private String app6 = content + "Capstone App.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,26 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        switch(v.getId())
-        {
-            case R.id.project1:
-                Toast.makeText(this,app1,Toast.LENGTH_LONG).show();
-                break;
-            case R.id.project2:
-                Toast.makeText(this,app2,Toast.LENGTH_LONG).show();
-                break;
-            case R.id.project3:
-                Toast.makeText(this,app3,Toast.LENGTH_LONG).show();
-                break;
-            case R.id.project4:
-                Toast.makeText(this,app4,Toast.LENGTH_LONG).show();
-                break;
-            case R.id.project5:
-                Toast.makeText(this,app5,Toast.LENGTH_LONG).show();
-                break;
-            case R.id.project6:
-                Toast.makeText(this,app6,Toast.LENGTH_LONG).show();
-                break;
-        }
+        String text = ((Button)v).getText().toString();
+        Toast.makeText(this,"This app will launch " + text + " app.", Toast.LENGTH_LONG).show();
     }
 }
